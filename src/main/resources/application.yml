@@ -1,0 +1,41 @@
+server:
+  port: 63082
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  redis:
+    host: localhost
+    port: 6379
+  application:
+    name: forge
+  data:
+    mongodb:
+      host: ${MONGODB_HOST:localhost}
+      port: ${MONGODB_PORT:27017}
+      database: ${MONGODB_DATABASE:forge}
+      autoIndexCreation: true
+gcp:
+  bucket:
+    name: year-exp-project
+eureka:
+    client:
+        service-url:
+            defaultZone: ${EUREKA_HOST:http://localhost:8761/eureka}
+openai:
+  api-key: ${OPENAI_KEY}
+  assistants:
+    file: ${FILE_ASSIST}
+    search: ${SEARCH_ASSIST}
+
+diia:
+  branch: ${BRANCH}
+  session:
+    token:
+      path: ${SESSION_TOKEN_PATH}
+  acquirer:
+    token: ${ACQUIRER_TOKEN}
+    auth: ${AUTH_ACQUIRER_TOKEN}
+  url:
+    ident:
+      document: ${DOCUMENT_IDENTIFICATION}
